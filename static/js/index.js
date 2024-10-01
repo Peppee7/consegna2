@@ -8,7 +8,7 @@ function getRandom(max) {
 }
 
 getRandom(100)
-
+alert(n)
 while(tentativi < 5) {
     let colpo = prompt("Idovina il numero!!!")
     while(colpo === null || isNaN(colpo)) {
@@ -19,6 +19,7 @@ while(tentativi < 5) {
 
     if(colpo == n) {
         console.log("CONGRATURAZIONI! Hai vinto.")
+        tentativi = 5
     } else if(colpo < n) {
         console.log("Troppo piccolo. Tentativi rimasti: " + (5 - tentativi) + " | " + colpo)
     } else {
