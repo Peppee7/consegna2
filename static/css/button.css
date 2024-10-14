@@ -1,0 +1,8 @@
+#guessBtn {
+    background-color: rgb(255, 213, 161);
+    color: brown;
+    font-weight: bolder;
+    line-height: 3;
+    border-radius: 15px;
+    border: 1px solid black;
+}

@@ -1,0 +1,17 @@
+@import "button.css";
+@import "number.css";
+
+body{
+    background-color: brown;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+p {
+    font-style: oblique;
+}
