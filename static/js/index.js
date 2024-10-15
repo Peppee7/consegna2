@@ -20,16 +20,20 @@ function callback(event) {
     if(colpo == n) {
         console.log("CONGRATURAZIONI! Hai vinto.")
         tentativi = 0
+        msg.innerHTML = "WINNER"
         alert("CONGRATURAZIONI! Hai vinto.")
     } else if(colpo < n) {
         console.log("Troppo piccolo. Tentativi rimasti: " + (5 - tentativi) + " | " + colpo)
+        msg.innerHTML = "Troppo piccolo. <br>Tentativi a disposizione: " + tentativi
     } else {
         console.log("Troppo grande.  Tentativi rimasti: " + (5 - tentativi) + " | " + colpo)
+        msg.innerHTML = "Troppo grande. <br>Tentativi a disposizione: " + tentativi
     }
 }
 
 getRandom(0, 100)
 
+let msg = document.querySelector("#message")
 let button = document.querySelector("[type=button]")
 while(tentativi != 0) { 
     button.addEventListener("click", callback)

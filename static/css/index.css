@@ -1,9 +1,14 @@
 @import "button.css";
 @import "number.css";
+@import "lis.css";
+@import "title.css";
 
 body{
-    background-color: brown;
-    text-align: center;
+    background-color: #CCFFC5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 0;
     padding: 0;
 }
