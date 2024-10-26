@@ -14,28 +14,46 @@ function callback(event) {
     while(colpo === null || isNaN(colpo)) {
         colpo = prompt("Idovina il numero!!!")
     }
-    tentativi++
     colpo = parseInt(colpo)
 
     if(colpo == n) {
         console.log("CONGRATURAZIONI! Hai vinto.")
-        tentativi = 0
         msg.innerHTML = "WINNER"
         alert("CONGRATURAZIONI! Hai vinto.")
     } else if(colpo < n) {
-        console.log("Troppo piccolo. Tentativi rimasti: " + (5 - tentativi) + " | " + colpo)
+        tentativi = tentativi - 1
+        console.log("Troppo piccolo. Tentativi rimasti: " + tentativi + " | " + colpo)
         msg.innerHTML = "Troppo piccolo. <br>Tentativi a disposizione: " + tentativi
     } else {
-        console.log("Troppo grande.  Tentativi rimasti: " + (5 - tentativi) + " | " + colpo)
+        tentativi = tentativi - 1
+        console.log("Troppo grande.  Tentativi rimasti: " + tentativi+ " | " + colpo)
         msg.innerHTML = "Troppo grande. <br>Tentativi a disposizione: " + tentativi
+    }
+
+    console.log(tentativi)
+    if(tentativi == 5 || tentativi == 4) {
+        bg.classList.add("greenBg")
+    }else if(tentativi == 3 || tentativi == 2) {
+        bg.classList.remove("greenBg")
+        bg.classList.add("yellowBg")
+    }else if(tentativi == 1) {
+        bg.classList.remove("yellowBg")
+        bg.classList.add("redBg")
+    }else if(tentativi <= 0) {
+        msg.innerHTML = "GAME OVER"
     }
 }
 
 getRandom(0, 100)
 
+let bg = document.querySelector("[class=background]")
 let msg = document.querySelector("#message")
 let button = document.querySelector("[type=button]")
-while(tentativi != 0) { 
-    button.addEventListener("click", callback)
-    tentativi = tentativi - 1
+let win = false
+
+bg.classList.add("greenBg")
+msg.innerHTML = "Tentativi a dispozione: " + tentativi
+
+if(tentativi >= 0) { 
+    button.addEventListener("click", callback) 
 }
