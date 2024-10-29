@@ -1,11 +1,14 @@
 .greenBg {
     background-color: #3AE3A8;
+    transition: all 2s;
 }
 
 .yellowBg {
     background-color: yellow;
+    transition: all 2s;
 }
 
 .redBg {
     background-color: red;
+    transition: all 2s;
 }
